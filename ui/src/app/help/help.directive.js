@@ -36,7 +36,7 @@ function Help($compile, $window, helpLinks) {
             }
             var helpUrl = helpLinks.linksMap[scope.helpLinkId];
             if (helpUrl) {
-                $window.open(helpUrl, '_blank');
+                $window.open('http://www.universaal.info/', '_blank');
             }
         }
 

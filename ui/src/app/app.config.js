@@ -15,6 +15,7 @@
  */
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import UrlHandler from './url.handler';
+import ThemeLoader from './theme.loader';
 import addLocaleKorean from './locale/locale.constant-ko';
 import addLocaleChinese from './locale/locale.constant-zh';
 import addLocaleRussian from './locale/locale.constant-ru';
@@ -152,11 +153,11 @@ export default function AppConfig($provide,
 
     function configureTheme() {
 
-        var theme = 'indigo';
+        var theme = ThemeLoader.defaultTheme; //'indigo';
 
         if (theme === 'blueGray') {
             blueGrayTheme();
-        } else {
+        } else if (theme === 'indigo') {
             indigoTheme();
         }
 

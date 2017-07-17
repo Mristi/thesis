@@ -232,7 +232,7 @@ export default function WidgetController($scope, $state, $timeout, $window, $ele
         }
 
         var createDatasourcesPromise;
-        if (options.type == types.widgetType.alarm.value) {
+        if (options.type === types.widgetType.alarm.value) {
             createDatasourcesPromise = entityService.createAlarmSourceFromSubscriptionInfo(subscriptionsInfo);
         } else {
             createDatasourcesPromise = entityService.createDatasourcesFromSubscriptionsInfo(subscriptionsInfo);
@@ -240,7 +240,7 @@ export default function WidgetController($scope, $state, $timeout, $window, $ele
 
         createDatasourcesPromise.then(
             function (result) {
-                if (options.type == types.widgetType.alarm.value) {
+                if (options.type === types.widgetType.alarm.value) {
                     options.alarmSource = result;
                 } else {
                     options.datasources = result;
@@ -339,7 +339,7 @@ export default function WidgetController($scope, $state, $timeout, $window, $ele
             options = {
                 type: widget.type
             }
-            if (widget.type == types.widgetType.alarm.value) {
+            if (widget.type === types.widgetType.alarm.value) {
                 options.alarmSource = angular.copy(widget.config.alarmSource);
                 options.alarmSearchStatus = angular.isDefined(widget.config.alarmSearchStatus) ?
                     widget.config.alarmSearchStatus : types.alarmSearchStatus.any;

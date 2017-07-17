@@ -68,6 +68,17 @@ public final class UserEntity implements SearchTextEntity<User> {
     @Column(name = USER_LAST_NAME_PROPERTY)
     private String lastName;
 
+    @Column(name = USER_DEFAULT_THEME_PROPERTY)
+    private String defaultTheme;
+
+    public String getDefaultTheme() {
+        return defaultTheme;
+    }
+
+    public void setDefaultTheme(String defaultTheme) {
+        this.defaultTheme = defaultTheme;
+    }
+
     @Column(name = USER_ADDITIONAL_INFO_PROPERTY, codec = JsonCodec.class)
     private JsonNode additionalInfo;
 

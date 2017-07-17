@@ -52,6 +52,7 @@ public class ModelConstants {
     public static final String USER_AUTHORITY_PROPERTY = "authority";
     public static final String USER_FIRST_NAME_PROPERTY = "first_name";
     public static final String USER_LAST_NAME_PROPERTY = "last_name";
+    public static final String USER_DEFAULT_THEME_PROPERTY = "last_name";
     public static final String USER_ADDITIONAL_INFO_PROPERTY = ADDITIONAL_INFO_PROPERTY;
 
     public static final String USER_BY_EMAIL_COLUMN_FAMILY_NAME = "user_by_email";

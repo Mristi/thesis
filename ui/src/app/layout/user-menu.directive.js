@@ -41,7 +41,7 @@ function UserMenu() {
 }
 
 /*@ngInject*/
-function UserMenuController($scope, userService, $translate, $state) {
+function UserMenuController($scope, userService, $translate, $state, themeService) {
 
     var vm = this;
 
@@ -50,6 +50,7 @@ function UserMenuController($scope, userService, $translate, $state) {
     vm.authorityName = authorityName;
     vm.logout = logout;
     vm.openProfile = openProfile;
+    vm.changeTheme = changeTheme;
     vm.userDisplayName = userDisplayName;
 
     function authorityName() {
@@ -90,6 +91,13 @@ function UserMenuController($scope, userService, $translate, $state) {
 
     function openProfile() {
         $state.go('home.profile');
+    }
+
+    function changeTheme() {
+
+        themeService.change();
+
+        $scope.theme='test';
     }
 
     function logout() {

@@ -368,8 +368,8 @@ export default angular.module('thingsboard.locale', [])
                     "unassign-from-customer": "Unassign from customer",
                     "make-public": "Make dashboard public",
                     "make-private": "Make dashboard private",
-                    "no-dashboards-text": "No dashboards found",
-                    "no-widgets": "No widgets configured",
+                    "no-dashboards-text": "Welcome to CLickDigital. Create your first dashboard",
+                    "no-widgets": "No widgets configured. Click the edit button",
                     "add-widget": "Add new widget",
                     "title": "Title",
                     "select-widget-title": "Select widget",
@@ -753,6 +753,7 @@ export default angular.module('thingsboard.locale', [])
                 "home": {
                     "home": "Home",
                     "profile": "Profile",
+                    "theme": "Change Theme",
                     "logout": "Logout",
                     "menu": "Menu",
                     "avatar": "Avatar",

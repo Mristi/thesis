@@ -30,6 +30,7 @@ public class User extends SearchTextBased<UserId> implements HasName {
     private TenantId tenantId;
     private CustomerId customerId;
     private String email;
+    private String defaultTheme;
     private Authority authority;
     private String firstName;
     private String lastName;
@@ -43,6 +44,14 @@ public class User extends SearchTextBased<UserId> implements HasName {
         super(id);
     }
 
+    public String getDefaultTheme() {
+        return defaultTheme;
+    }
+
+    public void setDefaultTheme(String defaultTheme) {
+        this.defaultTheme = defaultTheme;
+    }
+
     public User(User user) {
         super(user);
         this.tenantId = user.getTenantId();
@@ -52,6 +61,7 @@ public class User extends SearchTextBased<UserId> implements HasName {
         this.firstName = user.getFirstName();
         this.lastName = user.getLastName();
         this.additionalInfo = user.getAdditionalInfo();
+        this.defaultTheme = "indigo";
     }
 
     public TenantId getTenantId() {

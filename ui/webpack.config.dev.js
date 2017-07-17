@@ -24,7 +24,7 @@ const path = require('path');
 /* devtool: 'cheap-module-eval-source-map', */
 
 module.exports = {
-    devtool: 'source-map',
+    devtool: 'cheap-module-eval-source-map',
     entry: [
         './src/app/app.js',
         'webpack-hot-middleware/client?reload=true',

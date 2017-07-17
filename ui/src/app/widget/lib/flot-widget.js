@@ -24,7 +24,7 @@ import 'flot/src/plugins/jquery.flot.selection';
 import 'flot/src/plugins/jquery.flot.pie';
 import 'flot/src/plugins/jquery.flot.crosshair';
 import 'flot/src/plugins/jquery.flot.stack';
-import 'flot.curvedlines/curvedLines';
+//import 'flot.curvedlines/curvedLines';
 
 /* eslint-disable angular/angularelement */
 export default class TbFlot {

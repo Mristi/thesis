@@ -29,6 +29,12 @@
         </md-button>
         <md-menu-content width="4">
             <md-menu-item>
+                <md-button ng-click="vm.changeTheme()">
+                    <md-icon md-menu-align-target aria-label="{{ 'home.theme' | translate }}" class="material-icons">visibility</md-icon>
+                    <span translate>home.theme</span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
                 <md-button ng-click="vm.openProfile()">
                     <md-icon md-menu-align-target aria-label="{{ 'home.profile' | translate }}" class="material-icons">account_circle</md-icon>
                     <span translate>home.profile</span>

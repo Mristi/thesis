@@ -66,18 +66,7 @@ function Menu(userService, $state, $rootScope) {
                             state: 'home.links',
                             icon: 'home'
                         },
-                        {
-                            name: 'plugin.plugins',
-                            type: 'link',
-                            state: 'home.plugins',
-                            icon: 'extension'
-                        },
-                        {
-                            name: 'rule.rules',
-                            type: 'link',
-                            state: 'home.rules',
-                            icon: 'settings_ethernet'
-                        },
+
                         {
                             name: 'tenant.tenants',
                             type: 'link',
@@ -112,21 +101,7 @@ function Menu(userService, $state, $rootScope) {
                             ]
                         }];
                     homeSections =
-                        [{
-                            name: 'rule-plugin.management',
-                            places: [
-                                {
-                                    name: 'plugin.plugins',
-                                    icon: 'extension',
-                                    state: 'home.plugins'
-                                },
-                                {
-                                    name: 'rule.rules',
-                                    icon: 'settings_ethernet',
-                                    state: 'home.rules'
-                                }
-                            ]
-                        },
+                        [
                         {
                             name: 'tenant.management',
                             places: [
@@ -171,30 +146,6 @@ function Menu(userService, $state, $rootScope) {
                             icon: 'home'
                         },
                         {
-                            name: 'plugin.plugins',
-                            type: 'link',
-                            state: 'home.plugins',
-                            icon: 'extension'
-                        },
-                        {
-                            name: 'rule.rules',
-                            type: 'link',
-                            state: 'home.rules',
-                            icon: 'settings_ethernet'
-                        },
-                        {
-                            name: 'customer.customers',
-                            type: 'link',
-                            state: 'home.customers',
-                            icon: 'supervisor_account'
-                        },
-                        {
-                            name: 'asset.assets',
-                            type: 'link',
-                            state: 'home.assets',
-                            icon: 'domain'
-                        },
-                        {
                             name: 'device.devices',
                             type: 'link',
                             state: 'home.devices',
@@ -214,41 +165,7 @@ function Menu(userService, $state, $rootScope) {
                         }];
 
                     homeSections =
-                        [{
-                            name: 'rule-plugin.management',
-                            places: [
-                                {
-                                    name: 'plugin.plugins',
-                                    icon: 'extension',
-                                    state: 'home.plugins'
-                                },
-                                {
-                                    name: 'rule.rules',
-                                    icon: 'settings_ethernet',
-                                    state: 'home.rules'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'customer.management',
-                            places: [
-                                {
-                                    name: 'customer.customers',
-                                    icon: 'supervisor_account',
-                                    state: 'home.customers'
-                                }
-                            ]
-                        },
-                            {
-                                name: 'asset.management',
-                                places: [
-                                    {
-                                        name: 'asset.assets',
-                                        icon: 'domain',
-                                        state: 'home.assets'
-                                    }
-                                ]
-                            },
+                        [
                             {
                                 name: 'device.management',
                                 places: [
@@ -284,12 +201,6 @@ function Menu(userService, $state, $rootScope) {
                             icon: 'home'
                         },
                         {
-                            name: 'asset.assets',
-                            type: 'link',
-                            state: 'home.assets',
-                            icon: 'domain'
-                        },
-                        {
                             name: 'device.devices',
                             type: 'link',
                             state: 'home.devices',
@@ -303,16 +214,7 @@ function Menu(userService, $state, $rootScope) {
                         }];
 
                     homeSections =
-                        [{
-                            name: 'asset.view-assets',
-                            places: [
-                                {
-                                    name: 'asset.assets',
-                                    icon: 'domain',
-                                    state: 'home.assets'
-                                }
-                            ]
-                        },
+                        [
                         {
                             name: 'device.view-devices',
                             places: [
