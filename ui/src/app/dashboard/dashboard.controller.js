@@ -29,7 +29,7 @@ import AliasController from '../api/alias-controller';
 /*@ngInject*/
 export default function DashboardController(types, utils, dashboardUtils, widgetService, userService,
                                             dashboardService, timeService, entityService, itembuffer, importExport, hotkeys, $window, $rootScope,
-                                            $scope, $element, $state, $stateParams, $mdDialog, $mdMedia, $timeout, $document, $q, $translate, $filter) {
+                                            $scope, $element, $state, $stateParams, $mdDialog, $mdMedia, $timeout, $document, $q, $translate, $filter, $log) {
 
     var vm = this;
 
@@ -847,6 +847,7 @@ export default function DashboardController(types, utils, dashboardUtils, widget
     }
 
     function onAddWidgetClosed() {
+        $log.log("loged in here");
         vm.timeseriesWidgetTypes = [];
         vm.latestWidgetTypes = [];
         vm.rpcWidgetTypes = [];
@@ -906,6 +907,7 @@ export default function DashboardController(types, utils, dashboardUtils, widget
                 }
 
                 function addWidget(widget) {
+                    $log.log(widget);
                     if (vm.addingLayoutCtx) {
                         addWidgetToLayout(widget, vm.addingLayoutCtx.id);
                         vm.addingLayoutCtx = null;

@@ -100,6 +100,23 @@ export default function AddWidgetController($scope, widgetService, entityService
             vm.widget.config = vm.widgetConfig.config;
             vm.widget.config.mobileOrder = vm.widgetConfig.layout.mobileOrder;
             vm.widget.config.mobileHeight = vm.widgetConfig.layout.mobileHeight;
+
+
+            // vm.widgetConfig.config.datasources[0].name = "My Widget";
+            //
+            // var newWidget = {
+            //     isSystemType: widget.isSystemType,
+            //     bundleAlias: widget.bundleAlias,
+            //     typeAlias: "speed_gauge_canvas_gauges",
+            //     type: "latest",
+            //     title: 'New widget',
+            //     sizeX: 10,
+            //     sizeY: 7,
+            //     config: vm.widgetConfig.config
+            // };
+            //
+            // vm.widget = newWidget;
+
             $mdDialog.hide({widget: vm.widget});
         }
     }

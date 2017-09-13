@@ -69,7 +69,7 @@ export function DashboardCardController(types) {
 
 /*@ngInject*/
 export function DashboardsController(userService, dashboardService, customerService, importExport, types,
-                                             $state, $stateParams, $mdDialog, $document, $q, $translate) {
+                                             $state, $stateParams, $mdDialog, $document, $q, $translate, $log) {
 
     var customerId = $stateParams.customerId;
 
@@ -143,6 +143,8 @@ export function DashboardsController(userService, dashboardService, customerServ
     initController();
 
     function initController() {
+        $log.log("Psycho")
+        $log.log(vm)
         var fetchDashboardsFunction = null;
         var deleteDashboardFunction = null;
         var refreshDashboardsParamsFunction = null;

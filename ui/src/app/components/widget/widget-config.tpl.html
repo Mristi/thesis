@@ -88,6 +88,14 @@
                                 </div>
                             </div>
                             <div style="overflow: auto; padding-bottom: 15px;">
+                                <div flex layout="row" layout-align="center">
+                                    <ul>
+
+                                        <li ng-repeat="mydatasource in mydatasources">
+                                            {{ mydatasource.textValue }}
+                                        </li>
+                                    </ul>
+                                </div>
                                 <div flex layout="row" layout-align="start center"
                                      ng-repeat="datasource in datasources">
                                     <span flex="5">{{$index + 1}}.</span>

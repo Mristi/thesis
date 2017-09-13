@@ -45,7 +45,7 @@ export default angular.module('thingsboard.directives.widgetConfig', [thingsboar
     .name;
 
 /*@ngInject*/
-function WidgetConfig($compile, $templateCache, $rootScope, $translate, $timeout, types, utils) {
+function WidgetConfig($compile, $templateCache, $rootScope, $translate, $timeout, types, utils, $log) {
 
     var linker = function (scope, element, attrs, ngModelCtrl) {
 
@@ -123,6 +123,9 @@ function WidgetConfig($compile, $templateCache, $rootScope, $translate, $timeout
                         config.showLegend : scope.widgetType === types.widgetType.timeseries.value;
                     scope.legendConfig = config.legendConfig;
                     scope.actions = config.actions;
+
+                    scope.mydatasources = [ { 'textValue': 'motor' }, {'textValue': 'engine'}];
+
                     if (!scope.actions) {
                         scope.actions = {};
                     }
@@ -139,6 +142,14 @@ function WidgetConfig($compile, $templateCache, $rootScope, $translate, $timeout
                             for (var i in config.datasources) {
                                 scope.datasources.push({value: config.datasources[i]});
                             }
+                            var newDatasource = {
+                               type: types.datasourceType.entity,
+                               dataKeys: ["vomit", "here"]
+                            };
+
+                            scope.datasources.push(newDatasource);
+                            $log.log("in here");
+                            $log.log(config.datasources);
                         }
                     } else if (scope.widgetType === types.widgetType.rpc.value && scope.isDataEnabled) {
                         if (config.targetDeviceAliasIds && config.targetDeviceAliasIds.length > 0) {
@@ -175,11 +186,11 @@ function WidgetConfig($compile, $templateCache, $rootScope, $translate, $timeout
             }
         };
 
-        scope.displayAdvanced = function() {
+        scope.displayAdvanced = function () {
             return scope.widgetSettingsSchema && scope.widgetSettingsSchema.schema;
         }
 
-        scope.updateSchemaForm = function() {
+        scope.updateSchemaForm = function () {
             if (scope.widgetSettingsSchema && scope.widgetSettingsSchema.schema) {
                 scope.currentSettingsSchema = scope.widgetSettingsSchema.schema;
                 scope.currentSettingsForm = scope.widgetSettingsSchema.form || angular.copy(scope.defaultSettingsForm);
@@ -353,8 +364,8 @@ function WidgetConfig($compile, $templateCache, $rootScope, $translate, $timeout
                 ngModelCtrl.$setViewValue(value);
                 scope.updateValidity();
                 /*if (scope.theForm) {
-                    scope.theForm.$setDirty();
-                }*/
+                 scope.theForm.$setDirty();
+                 }*/
             }
         }, true);
 
@@ -364,7 +375,8 @@ function WidgetConfig($compile, $templateCache, $rootScope, $translate, $timeout
                 newDatasource = angular.copy(utils.getDefaultDatasource(scope.datakeySettingsSchema.schema));
                 newDatasource.dataKeys = [scope.generateDataKey('Sin', types.dataKeyType.function)];
             } else {
-                newDatasource = { type: types.datasourceType.entity,
+                newDatasource = {
+                    type: types.datasourceType.entity,
                     dataKeys: []
                 };
             }
@@ -396,7 +408,7 @@ function WidgetConfig($compile, $templateCache, $rootScope, $translate, $timeout
             if (type === types.dataKeyType.alarm) {
                 var alarmField = types.alarmFields[chip];
                 if (alarmField) {
-                    label = $translate.instant(alarmField.name)+'';
+                    label = $translate.instant(alarmField.name) + '';
                 }
             }
             label = scope.genNextLabel(label);
@@ -434,7 +446,7 @@ function WidgetConfig($compile, $templateCache, $rootScope, $translate, $timeout
                 matches = false;
                 var datasources = scope.widgetType == types.widgetType.alarm.value ? [value.config.alarmSource] : value.config.datasources;
                 if (datasources) {
-                    for (var d=0;d<datasources.length;d++) {
+                    for (var d = 0; d < datasources.length; d++) {
                         var datasource = datasources[d];
                         if (datasource && datasource.dataKeys) {
                             for (var k = 0; k < datasource.dataKeys.length; k++) {
@@ -457,7 +469,7 @@ function WidgetConfig($compile, $templateCache, $rootScope, $translate, $timeout
             var value = ngModelCtrl.$viewValue;
             var datasources = scope.widgetType == types.widgetType.alarm.value ? [value.config.alarmSource] : value.config.datasources;
             if (datasources) {
-                for (var d=0;d<datasources.length;d++) {
+                for (var d = 0; d < datasources.length; d++) {
                     var datasource = datasources[d];
                     if (datasource && datasource.dataKeys) {
                         i += datasource.dataKeys.length;
